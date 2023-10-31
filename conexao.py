@@ -26,9 +26,11 @@ def read(con):
     try:
             cursor.execute(query)
 
-            print('\n\t\t\t ** SENAI - LISTA DE CHAMADA ** \n ')
+            print('\n\t\t\t ** SENAI - LISTA DE CHAMADA ** ')
+            print('\t -- RA -- \t\t ---------- Nome ------------')
             for campo in cursor.fetchall():
-                print(f'RA: {campo[0]} - Nome: {campo[1]}\n')
+                print(f'\t{campo[0]} \t \t\t {campo[1]}')
+                # print(f'\tRA: {campo[0]} - Nome: {campo[1]}')
 
     except(Exception, Error) as error:
         print('Conectou mas não funcionou! ' +str(error))
